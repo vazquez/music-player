@@ -39,36 +39,41 @@ var createSongRow = function(songNumber, songName, songLength){
   return $(template);
 };
 
+
+var changeAlbumView = function(album){
+
+  // Update title
+  var $albumTitle = $('.album-title');
+  $albumTitle.text(album.name);
+
+  // Update Album artist
+  var $albumArtist = $('.album-artist');
+  $albumArtist.text(album.artist);
+
+  // Update meta info
+  var $albumMeta = $('.album-meta-info');
+  $albumMeta.text(album.year + " on " + album.label);
+
+
+  // Update album image
+  var $albumImage = $('.album-image img');
+  $albumImage.attr('src', album.albumArtUrl);
+
+  // Update song list
+  var $songList = $('.album-song-listing');
+  $songList.empty();
+
+  var songs = album.songs;
+  for (var i = 0; i < songs.length; i++) {
+    var songData = songs[i];
+    var $newRow = createSongRow(i + 1, songData.name, songData.length);
+    $songList.append($newRow);
+  };
+}
+
+
 if (document.URL.match(/\/album.html/)) {
   jQuery(document).ready(function($) {
-    var album = albumPicasso;
-
-    // Update title
-    var $albumTitle = $('.album-title');
-    $albumTitle.text(album.name);
-
-    // Update Album artist
-    var $albumArtist = $('.album-artist');
-    $albumArtist.text(album.artist);
-
-    // Update meta info
-    var $albumMeta = $('.album-meta-info');
-    $albumMeta.text(album.year + " on " + album.label);
-
-    // Update album image
-    var $albumImage = $('.album-image img');
-    $albumImage.attr('src', album.albumArtUrl);
-
-    // Update song list
-    var $songList = $('.album-song-listing');
-    $songList.empty();
-
-    var songs = album.songs;
-    for (var i = 0; i < songs.length; i++) {
-      var songData = songs[i];
-      var $newRow = createSongRow(i + 1, songData.name, songData.length);
-      $songList.append($newRow);
-    };
-
+    changeAlbumView(albumPicasso);
   });
 };
