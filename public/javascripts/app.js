@@ -179,9 +179,6 @@ var createSongRow = function(songNumber, songName, songLength){
   return $row;
 };
 
-
-
-
 var changeAlbumView = function(album){
 
   // Update title
@@ -213,10 +210,46 @@ var changeAlbumView = function(album){
   };
 }
 
+var updateSeekPercentage = function($seekbar, event){
+  var barWidth = $seekbar.width();
+  var offsetX = event.pageX - $seekbar.offset().left;
+
+  var offsetXPercent = (offsetX / barWidth) * 100;
+  offsetXPercent = Math.max(0, offsetXPercent);
+  offsetXPercent = Math.min(100, offsetXPercent);
+
+  var percentageString = offsetXPercent + '%';
+  $seekbar.find('.fill').width(percentageString);
+  $seekbar.find('.thumb').css({left: percentageString});
+}
+
+var setupSeekBars = function(){
+  $seekBars = $('.player-bar .seek-bar');
+  $seekBars.click(function(event) {
+    updateSeekPercentage($(this), event)
+  });
+
+  $seekBars.find('.thumb').mousedown(function(event) {
+    var $seekBar = $(this).parent();
+    $seekBar.addClass('no-animate');
+    $(document).on('mousemove.thumb', function(event) {
+      event.preventDefault();
+      updateSeekPercentage($seekBar, event);
+    });
+
+    $(document).bind('mouseup.thumb', function(){
+      $seekBar.removeClass('no-animate');
+      $(document).unbind('mousemove.thumb');
+      $(document).unbind('mouseup.thumb');
+    });
+
+  });
+}
 
 if (document.URL.match(/\/album.html/)) {
   jQuery(document).ready(function($) {
     changeAlbumView(albumPicasso);
+    setupSeekBars();
     $('.album-image').click(function(){
       changeAlbumView(albumMarconi);
     });
