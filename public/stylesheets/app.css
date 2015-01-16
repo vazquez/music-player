@@ -1,22 +1,3 @@
-html {
-  height: 100%; }
-
-body {
-  font-family: 'Open Sans';
-  color: white;
-  min-height: 100%;
-  background: -webkit-radial-gradient(#2b1339, #380c77);
-  background: radial-gradient(#2c3e50, #34495e);
-  padding-bottom: 150px; }
-  body.landing {
-    padding: 0;
-    background: #2c3e50; }
-    body.landing .navbar {
-      margin-bottom: 0; }
-
-.player-header-nav {
-  background-color: #3498db; }
-
 .hero-content {
   background: #34495e;
   padding: 100px 0; }
@@ -67,6 +48,32 @@ body {
     padding: 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.4); }
 
+.album-song-button {
+  text-align: center;
+  font-size: 14px;
+  background-color: white;
+  color: #193549;
+  border-radius: 50% 50%;
+  display: inline-block;
+  width: 28px;
+  height: 28px; }
+  .album-song-button:hover {
+    cursor: pointer;
+    color: white;
+    background-color: #193549; }
+  .album-song-button i {
+    line-height: 28px; }
+  .album-song-button .fa-play {
+    padding-left: 5px; }
+
+.album-song-listing td {
+  vertical-align: middle; }
+  .album-song-listing td.song-number {
+    padding: 0;
+    height: 70px;
+    text-align: center;
+    vertical-align: middle; }
+
 .collection-album-container {
   margin-top: 30px;
   margin-bottom: 20px; }
@@ -114,32 +121,6 @@ body {
     line-height: 42px; }
   .collection-album-container .collection-overlay-button .fa-play {
     padding-left: 5px; }
-
-.album-song-button {
-  text-align: center;
-  font-size: 14px;
-  background-color: white;
-  color: #193549;
-  border-radius: 50% 50%;
-  display: inline-block;
-  width: 28px;
-  height: 28px; }
-  .album-song-button:hover {
-    cursor: pointer;
-    color: white;
-    background-color: #193549; }
-  .album-song-button i {
-    line-height: 28px; }
-  .album-song-button .fa-play {
-    padding-left: 5px; }
-
-.album-song-listing td {
-  vertical-align: middle; }
-  .album-song-listing td.song-number {
-    padding: 0;
-    height: 70px;
-    text-align: center;
-    vertical-align: middle; }
 
 .player-bar {
   position: fixed;
@@ -265,6 +246,25 @@ body {
   display: inline-block;
   width: 100px;
   vertical-align: middle; }
+
+html {
+  height: 100%; }
+
+body {
+  font-family: 'Open Sans';
+  color: white;
+  min-height: 100%;
+  background: -webkit-radial-gradient(#2b1339, #380c77);
+  background: radial-gradient(#2c3e50, #34495e);
+  padding-bottom: 150px; }
+  body.landing {
+    padding: 0;
+    background: #2c3e50; }
+    body.landing .navbar {
+      margin-bottom: 0; }
+
+.player-header-nav {
+  background-color: #3498db; }
 
 
 /*# sourceMappingURL=app.css.map*/

@@ -1,0 +1,74 @@
+
+.album-header-container {
+  margin-top: 55px;
+  margin-bottom: 40px;
+}
+// This styles the right side of our Album Header
+.album-information {
+  // Pushes the album information down and makes sure there's sufficient space at the bottom of the page
+  margin-top: 45px;
+  margin-bottom: 20px;
+}
+
+.album-information h3, .album-information h4, .album-information h5 {
+  // Modifying the line height allows us to increase the spacing above and below the content. Another way of achieving the same effect would be to set a margin-top and margin-bottom for each of these classes
+  line-height: 150%;
+}
+.album-information {
+  > h3 {
+    font-size: 48px;
+    font-weight: 300;
+  }
+  > h4 {
+    font-size: 24px;
+    font-weight: 700;
+  }
+  > .h5 {
+    font-size: 16px;
+    font-weight: 500;
+  }
+}
+.table.album-song-listing {
+  // Override the font for the entire table.
+  font-weight: 300;
+  td {
+  padding: 20px;
+  border-top: 1px solid rgba(255, 255, 255, .4);
+  }
+}
+
+
+
+.album-song-button {
+  text-align: center;
+  font-size: 14px;
+  background-color: white;
+  color: #193549;
+  border-radius: 50% 50%;
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  &:hover {
+    cursor: pointer;
+    color: white;
+    background-color: #193549;
+  }
+  i {
+    line-height: 28px
+  }
+  .fa-play {
+    padding-left: 5px
+  }
+}
+
+.album-song-listing {
+  td {
+    vertical-align: middle;
+    &.song-number {
+      padding: 0;
+      height: 70px;
+      text-align: center;
+      vertical-align: middle;
+    }
+  }
+}
