@@ -276,6 +276,12 @@ blocJams.config(['$stateProvider', '$locationProvider', function($stateProvider,
     templateUrl: '/templates/landing.html'
   });
 
+  $stateProvider.state('song', {
+    url: '/song',
+    controller: 'Song.controller',
+    templateUrl: '/templates/song.html'
+  });
+
 }]);
 
 blocJams.controller('Landing.controller', ['$scope', function($scope){
@@ -299,6 +305,10 @@ blocJams.controller('Landing.controller', ['$scope', function($scope){
   ];
 
 }]);
+
+blocJams.controller('Song.controller', ['$scope', function($scope){
+  $scope.title = "I'm not one of those who can easily hide.";
+}])
 
 });
 
