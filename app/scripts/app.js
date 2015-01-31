@@ -31,7 +31,7 @@ blocJams.controller('Landing.controller', ['$scope', function($scope){
     $scope.subText += '!';
   };
 
-  $scope.albumURLs = [
+  $scope.albums = [
     '/images/album-placeholders/album-1.jpg',
     '/images/album-placeholders/album-2.jpg',
     '/images/album-placeholders/album-3.jpg',
