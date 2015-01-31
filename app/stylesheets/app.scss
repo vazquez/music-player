@@ -6,6 +6,8 @@
 @import "buttons";
 
 
+$blue: rgba(52, 152, 219,1);
+
 html{
   height: 100%;
 }
@@ -27,5 +29,17 @@ body{
 }
 
 .player-header-nav {
-  background-color: rgba(52, 152, 219,1)
+  background-color: $blue;
+  .navbar-nav {
+    a {
+      line-height: 45px;
+      color: white;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 1.2;
+      &:hover {
+         color: $blue;
+      }
+    }
+  }
 }

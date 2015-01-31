@@ -339,6 +339,14 @@ body {
 
 .player-header-nav {
   background-color: #3498db; }
+  .player-header-nav .navbar-nav a {
+    line-height: 45px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1.2; }
+    .player-header-nav .navbar-nav a:hover {
+      color: #3498db; }
 
 
 /*# sourceMappingURL=app.css.map*/
