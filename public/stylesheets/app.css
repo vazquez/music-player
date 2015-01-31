@@ -345,7 +345,7 @@ body {
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 1.2; }
-    .player-header-nav .navbar-nav a:hover {
+    .player-header-nav .navbar-nav a:hover, .player-header-nav .navbar-nav a:active, .player-header-nav .navbar-nav a:focus {
       color: #3498db; }
 
 
