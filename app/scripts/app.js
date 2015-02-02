@@ -38,8 +38,14 @@ blocJams.config(['$stateProvider', '$locationProvider', function($stateProvider,
 
   $stateProvider.state('collection', {
     url: '/collection',
-    controller: "Collection.controller",
+    controller: 'Collection.controller',
     templateUrl: '/templates/collection.html'
+  });
+
+  $stateProvider.state('album', {
+    url: '/album',
+    controller: 'Album.controller',
+    templateUrl: '/templates/album.html'
   });
 
 }]);
@@ -76,3 +82,7 @@ blocJams.controller('Collection.controller', ['$scope', function($scope){
     $scope.albums.push(angular.copy(albumPicasso));
   };
 }]);
+
+blocJams.controller('Album.controller', ['$scope', function($scope){
+  $scope.album = angular.copy(albumPicasso);
+}])
