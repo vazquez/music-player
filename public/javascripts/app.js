@@ -333,6 +333,27 @@ blocJams.controller('Collection.controller', ['$scope', function($scope){
 
 blocJams.controller('Album.controller', ['$scope', function($scope){
   $scope.album = angular.copy(albumPicasso);
+
+  var hoveredSong = null,
+      playingSong = null;
+
+  $scope.onHoverSong = function(song){
+    hoveredSong = song;
+  }
+
+  $scope.offHoverSong = function(song){
+    hoveredSong = null;
+  }
+
+  $scope.getSongState = function(song){
+    if (song === playingSong) {
+      return 'playing';
+    } else if (song === hoveredSong){
+      return 'hovered';
+    }
+    return 'default';
+  };
+
 }])
 
 });
